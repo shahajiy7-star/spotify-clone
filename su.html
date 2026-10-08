@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suport</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-btn {
+  background: #1db954;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+/* Search box */
+.search-box {
+  max-width: 600px;
+  margin: auto;
+  background: #181818;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.search-box button {
+  background: #1db954;
+  border: none;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Added Message Styling */
+#supportMessage {
+  margin-top: 20px;
+  color: #1db954;
+  font-weight: 600;
+  display: none; /* Hidden by default */
+}
+
+/* Sections */
+.section {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+.item {
+  padding: 15px;
+  border-bottom: 1px solid #2a2a2a;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #1a1a1a;
+}
+
+/* Quick Help */
+.quick-help {
+  background: #1a1a1a;
+  padding: 40px;
+}
+
+.quick-help .item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Community */
+.community {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.community button {
+  background: #1db954;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  font-size: 14px;
+}
+
+.footer div h4 {
+  margin-bottom: 10px;
+}
+
+.footer div p {
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+/* Cookie bar */
+.cookie {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2a2a2a;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cookie button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">Spotify</div>
+  <div class="nav-links">
+    <a href="#">Explore Premium</a>
+    <a href="#">Install App</a>
+    <a href="#">Sign up</a>
+    <a href="#" class="login-btn">Log in</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Spotify Support</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Ask a question or describe your issue">
+    <button onclick="showSupportSuccess()">➜</button>
+  </div>
+  <div id="supportMessage">Support is successful!</div>
+</div>
+
+<div class="section">
+  <h2>Browse help articles</h2>
+  <div class="item">Managing your account</div>
+  <div class="item">Premium plans</div>
+  <div class="item">In-app features</div>
+  <div class="item">Devices & troubleshooting</div>
+  <div class="item">Safety & privacy</div>
+</div>
+
+<div class="quick-help">
+  <div class="section">
+    <h2>Quick help</h2>
+    <div class="item">Can't log in to Spotify <span>›</span></div>
+    <div class="item">Failed payment help <span>›</span></div>
+    <div class="item">Charged too much <span>›</span></div>
+    <div class="item">Family plan members <span>›</span></div>
+    <div class="item">Change payment details <span>›</span></div>
+  </div>
+</div>
+
+<div class="community">
+  <h2>Visit our Community</h2>
+  <p>Find answers from expert fans</p><br>
+  <button>Go to Community</button>
+</div>
+
+<div class="footer">
+  <div>
+    <h4>Company</h4>
+    <p>About</p>
+    <p>Jobs</p>
+    <p>For the Record</p>
+  </div>
+  <div>
+    <h4>Communities</h4>
+    <p>For Artists</p>
+    <p>Developers</p>
+    <p>Advertising</p>
+  </div>
+  <div>
+    <h4>Useful Links</h4>
+    <p>Support</p>
+    <p>Web Player</p>
+    <p>Contact</p>
+  </div>
+  <div>
+    <h4>Spotify Plans</h4>
+    <p>Premium Lite</p>
+    <p>Premium Standard</p>
+    <p>Premium Student</p>
+  </div>
+</div>
+
+<div class="cookie" id="cookieBar">
+  <span>We use cookies to improve your experience.</span>
+  <button onclick="closeCookie()">✕</button>
+</div>
+
+<script>
+function closeCookie() {
+  document.getElementById("cookieBar").style.display = "none";
+}
+
+// Function to show the success message
+function showSupportSuccess() {
+  const message = document.getElementById("supportMessage");
+  const input = document.getElementById("searchInput");
+
+  if(input.value.trim() !== "") {
+    message.style.display = "block";
+    // Optional: Hide it again after 3 seconds
+    setTimeout(() => {
+       message.style.display = "none";
+    }, 3000);
+  } else {
+    alert("Please enter a question first!");
+  }
+}
+</script>
+
+</body>
+</html>

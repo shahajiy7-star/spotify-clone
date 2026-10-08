@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Download UI</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: #000;
+  color: white;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #121212;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #2a2a2a;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search {
+  background: #1f1f1f;
+  padding: 10px 15px;
+  border-radius: 20px;
+  width: 300px;
+  color: #aaa;
+}
+
+.top-links span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: white;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+/* Animated Hero */
+.hero {
+  position: relative;
+  border-radius: 15px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff6600);
+  animation: gradientMove 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% { transform: translate(-25%, -25%) rotate(0deg); }
+  100% { transform: translate(-25%, -25%) rotate(360deg); }
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+}
+
+.hero h1 {
+  margin: 20px 0;
+  font-size: 30px;
+}
+
+.hero p {
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.download-btn {
+  background: white;
+  color: black;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  background: #1db954;
+  color: white;
+}
+
+/* Animated visual (instead of image) */
+.visual {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating circles animation */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 6s infinite ease-in-out;
+}
+
+.circle:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  background: #1db954;
+  top: 10%;
+  left: 20%;
+}
+
+.circle:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  background: #ff00cc;
+  bottom: 10%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  background: #00ccff;
+  top: 40%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+/* Cookie bar */
+.cookie {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #eee;
+  color: #000;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cookie button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h3>Your Library</h3>
+
+  <div class="card">
+    <p>Create your first playlist</p>
+    <button>Create playlist</button>
+  </div>
+
+  <div class="card">
+    <p>Find podcasts to follow</p>
+    <button>Browse podcasts</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <div class="topbar">
+    <div class="search">What do you want to play?</div>
+
+    <div class="top-links">
+      <span>Premium</span>
+      <span>Support</span>
+      <span>Download</span>
+      <span class="login-btn">Log in</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <h3>Spotify</h3>
+      <h1>Download Spotify for Windows</h1>
+      <p>
+        Enjoy high-quality audio, offline playback, and real-time activity with friends.
+      </p>
+
+      <div class="download-btn" onclick="downloadApp()">
+        Download from Microsoft Store
+      </div>
+    </div>
+
+    <!-- Animated shapes -->
+    <div class="visual">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Cookie -->
+<div class="cookie" id="cookieBar">
+  <span>We use cookies to improve your experience.</span>
+  <button onclick="closeCookie()">✕</button>
+</div>
+
+<script>
+function closeCookie() {
+  document.getElementById("cookieBar").style.display = "none";
+}
+
+function downloadApp() {
+  alert("Download starting...");
+}
+</script>
+
+</body>
+</html>

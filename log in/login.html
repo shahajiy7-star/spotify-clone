@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spotify</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212; /* Spotify Dark Background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 40px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        /* Form Styles */
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #121212;
+            border: 1px solid #727272;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: white;
+            border-width: 2px;
+            padding: 13px; /* Compensate for border width */
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background-color: #1ed760;
+            border: none;
+            border-radius: 500px;
+            color: black;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.1s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.04);
+            background-color: #1fdf64;
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 12px;
+            color: #b3b3b3;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #292929;
+        }
+
+        .divider:not(:empty)::before { margin-right: 1em; }
+        .divider:not(:empty)::after { margin-left: 1em; }
+
+        /* Social Buttons */
+        .btn-outline {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid #727272;
+            border-radius: 500px;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            border-top: 1px solid #292929;
+            padding-top: 30px;
+        }
+
+        .footer p {
+            color: #b3b3b3;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .legal {
+            font-size: 11px;
+            color: #b3b3b3;
+            margin-top: 40px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <svg class="logo" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.492 17.302c-.216.354-.678.464-1.032.247-2.863-1.748-6.466-2.144-10.709-1.176-.405.093-.812-.162-.905-.567-.093-.404.162-.812.567-.905 4.646-1.064 8.623-.615 11.831 1.341.354.217.465.678.248 1.032zm1.465-3.26c-.272.443-.848.583-1.291.31-3.277-2.013-8.273-2.597-12.148-1.42-.501.152-1.03-.133-1.182-.634-.152-.501.133-1.03.634-1.182 4.428-1.344 9.932-.689 13.677 1.61.443.272.583.848.31 1.291zm.126-3.395c-3.931-2.334-10.419-2.549-14.204-1.401-.603.183-1.24-.158-1.423-.761-.183-.603.158-1.24.761-1.423 4.346-1.319 11.512-1.063 16.035 1.62.542.321.72 1.025.399 1.567-.321.542-1.025.72-1.568.398z"/></svg>
+
+        <h1>Welcome back</h1>
+
+        <div class="input-group">
+            <label for="username">Email or username</label>
+            <input type="text" id="username" placeholder="Email or username">
+        </div>
+
+        <button class="btn-primary" id="loginBtn">Continue</button>
+
+        <div class="divider">or</div>
+
+        <button class="btn-outline">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/iphone.png" class="icon" alt="phone">
+            Continue with phone number
+        </button>
+        <button class="btn-outline">
+            <img src="https://img.icons8.com/color/48/000000/google-logo.png" class="icon" alt="google">
+            Continue with Google
+        </button>
+        <button class="btn-outline">
+            <img src="https://img.icons8.com/ios-filled/50/4267B2/facebook-new.png" class="icon" alt="fb">
+            Continue with Facebook
+        </button>
+        <button class="btn-outline">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/apple-logo.png" class="icon" alt="apple">
+            Continue with Apple
+        </button>
+
+        <div class="footer">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+
+        <p class="legal">
+            This site is protected by reCAPTCHA and the Google 
+            <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+        </p>
+    </div>
+
+    <script>
+        // Simple JS for interaction
+        const loginBtn = document.getElementById('loginBtn');
+        const usernameInput = document.getElementById('username');
+
+        loginBtn.addEventListener('click', () => {
+            const val = usernameInput.value;
+            if(val === "") {
+                alert("Please enter your email or username");
+            } else {
+                console.log("Attempting login for:", val);
+                alert("Proceeding to password step...");
+            }
+        });
+
+        // Add 'Enter' key support
+        usernameInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                loginBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

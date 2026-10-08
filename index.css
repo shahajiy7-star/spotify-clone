@@ -1,0 +1,351 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: black;
+  font-family: "Playfair Display", serif;
+}
+/*nav bar*/
+nav{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.left-half{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.logo{
+  font-size: 2.5rem;
+  margin: 1rem;
+}
+.home-icon{
+  font-size: 1.7rem;
+  background-color: #1f1f1f;
+  color: rgb(179, 179, 179);
+  padding: 8px;
+  border-radius: 50%;
+  margin: 0 1rem;
+  transition: 0.2s;
+}
+.home-icon:hover{
+  color: white;
+  transform: scale(1.05);
+}
+.search-bar{
+  display: flex;
+  background-color: #1f1f1f;
+  align-items: center;
+  height: 3rem;
+  width: 30rem;
+  border-radius: 20rem;
+}
+.search-bar:hover{
+  background-color: #272727;
+  border: 1px solid rgb(76, 76, 76);
+}
+.search-icon{
+  font-size: 1.5rem;
+  color: rgb(179, 179, 179);
+  padding: 0 0.7rem;
+}
+.search-bar:hover .search-icon{
+  color: white;
+}
+.input-box{
+  width: 78%;
+  height: 60%;
+  background-color: #27272700;
+  border: none;
+  border-right: 1px solid rgb(179, 179, 179);
+  color: white;
+  font-size: 1.2rem;
+}
+.browse{
+  font-size: 1.3rem;
+  margin-left: 0.6rem;
+}
+.browse:hover:{
+  transform: scale(1.05);
+}
+
+.right-half{
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 48%;
+}
+
+.right-half-p1{
+  display: flex;
+  align-items: center;
+  height: 1.7rem;
+  margin: 0 1rem;
+  padding: 0 1rem 0 0;
+  border-right: 1px solid rgb(179, 179, 179);
+}
+.nav-text{
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: rgb(179, 179, 179);
+  transition: 0.5;
+}
+.nav-text:hover{
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.right-half-p2{
+  display: flex;
+  align-items: center;
+}
+.login-btn{
+  height: 3rem;
+  width: 7rem;
+  border-radius: 15rem;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem;
+  transition: 0.2s;
+}
+.login-btn:hover{
+  transform: scale(1.05);
+
+}
+/* main-left-part*/
+.main{
+  background-color: black;
+  min-width: 98vw;
+  height: 76vh;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+.main-left-part{
+  width: 27%;
+  height: 100%;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+}
+.main-right-part{
+  width: 72%;
+  height: 100%;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.library{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 1.5rem;
+}
+
+.library p{
+  font-weight: 600;
+}
+.library div{
+  font-size: 2rem;
+  color: rgb(179, 179, 179);
+  background-color: #2f2f2f;
+  padding: 8px;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30rem;
+  transition: 0.2s;
+}
+.library div:hover{
+  color: white;
+  background-color: #4c4c4c;
+}
+.box-container{
+  margin-top: 1rem;
+  height: 100%;
+}
+.box{
+  background-color: #1f1f1f;
+  height: 30%;
+  width: 98%;
+  border-radius: 10px;
+  margin: 1rem 0;
+
+}
+.box h4{
+  font-weight: 600;
+  font: 0.9rem;
+  padding: 1.3rem 0 0.5rem 1rem;
+}
+.box p{
+  font-size: 0.8rem;
+  padding-left: 1rem;
+}
+.box button{
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  padding: 0.6rem  0.8rem;
+  margin: 1rem 0  1rem;
+  border-radius: 25rem;
+
+}
+.box button:hover{
+  transform:scale(1.04);
+  background-color: rgb(229, 229, 229);
+}
+
+.music-card img{
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+.music-card{
+  width: 10rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  position: relative;
+}
+.music-card:hover{
+  background-color: #222;
+}
+.music-section{
+  margin: 2rem 0 2rem 2rem;
+}
+.songs{
+  margin: 2rem 0;
+  display: flex;
+  overflow-x: auto;
+}
+.img-title{
+  margin: 0.7rem 0;
+}
+.img-description{
+  font-size: 0.8rem;
+  color: rgb(198, 198, 198);
+}
+.music-play-btn{
+  color: rgb(32, 234, 32);
+  font-size: 2.7rem;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 2.7rem;
+  display: flex;
+  border-radius: 20rem;
+  transform: translate(110px, -40px);
+  opacity: 0;
+  transition: 0.3s;
+}
+.music-card:hover .music-play-btn{
+  opacity: 1;
+  transform: translate(110px, -50px);
+}
+
+/*player*/
+.player-bar{
+  width: 100%;
+  height: 5rem;
+  margin-top: 0.2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* left - center - right */
+  align-items: center;
+}
+
+/* CENTER (controls + seekbar) */
+.music-controller{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;  /* always center */
+  width: 100%;
+}
+
+/* PLAYER BUTTONS */
+.player{
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fa-solid{
+  font-size: 1.1rem;
+  margin: 0.4rem 1rem;
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+}
+.fa-solid:hover{
+  transform: scale(1.02);
+  color: rgb(232, 232, 232);
+}
+#play{
+  font-size: 2.3rem;
+  color: white;
+
+}
+/* SEEK BAR FIX */
+#progressbar{
+  appearance: none;
+  width: 500px;   /* fixed width */
+  max-width: 90%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type ="range"]::-webkit-slider-thumb{
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* LEFT (song info) */
+.now-bar{
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.player-bar img{
+  height: 4rem;
+  width: 4rem;
+  border-radius: 10px;
+  padding: 0.3rem;
+}
+.img-title-info{
+  color: white;
+  font-size: 0.9rem;
+  margin: 1rem;
+}
+.img-des-info{
+  font: 0.8rem;
+  color: rgb(192, 192, 192);
+  margin: 1rem;
+}
+
+/* RIGHT SIDE (empty space balanced) */
+.player-bar > div:last-child{
+  justify-self: end;
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: inherit;   /* parent ka color lega (white) */
+  text-decoration: none;
+}

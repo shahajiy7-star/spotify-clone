@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify-clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <div class="left-half">
+            <div class="logo"><i class="fa-brands fa-spotify"></i></div>
+            <div class="home-icon"><i class="fa-solid fa-house"></i></div>
+            <div class="search-bar">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></i></div>
+                <input type="text" class="input-box" placeholder="what do you want to play ?">
+                <div class="browse"><i class="fa-regular fa-window-restore"></i></div>
+            </div>
+        </div>
+        <div class="right-half">
+            <div class="right-half-p1">
+                <p class="nav-text"><a href="premium.html">premium</a></p>
+                <p class="nav-text"><a href="su.html">Support</a></p>
+                <p class="nav-text"><a href="download.html">Download</a></p>
+            </div>
+            <div class="right-half-p2">
+                <div class="nav-text"><i class="fa-solid fa-download"></i><a href="install.html">Install</a></div>
+                <div class="nav-text"><a href="signin.html">Sign Up</a></div>
+                <button class="login-btn"><a href="log in/login.html">Log in</a></button>
+            </div>
+        </div>
+    </nav>
+    <!--main-left part -->
+    <div class="main">
+        <div class="main-left-part">
+            <div class="library">
+                <p>Your Library</p>
+                <div>+</div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <h4>Create your first playlist</h4>
+                    <p>It's easy we'll help you</p>
+                    <button>Create playlist</button>
+                </div>
+                <div class="box">
+                    <h4>Let's find some podcasts to follow</h4>
+                    <p>We'll keep you to updated on new updates</p>
+                    <button>Browse podcasts</button>
+                </div>
+            </div>
+        </div>
+        <!--main-right-part -->
+        <div class="main-right-part">
+            <div class="music-section">
+                <h2>Today's biggest hits</h2>
+                <div class="songs">
+                    <div class="music-card" data-index="0">
+                        <img src="images/01.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Tera Ishq Bada Teekha</div>
+                        <div class="img-description"> Sajid Wajid, Javed Ali, Shreya Ghoshal</div>
+                    </div>
+                    <div class="music-card" data-index="1">
+                        <img src="images/2.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Mera Pehala Pehala Pyar</div>
+                        <div class="img-description">(From K.K) Lyrics</div>
+                    </div>
+                    <div class="music-card" data-index="2">
+                        <img src="images/03.jpg" alt="" >
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Tum Tak</div>
+                        <div class="img-description"> A.R. Rahman</div>
+                    </div>
+                    <div class="music-card" data-index="3">
+                        <img src="images/4.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Love Is A Waste Of Time</div>
+                        <div class="img-description"> Shantanu Moitra, Sonu Nigam, Shreya Ghoshal</div>
+                    </div>
+                    <div class="music-card" data-index="4">
+                        <img src="images/005.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Tamma Tamma</div>
+                        <div class="img-description"> Bappi Lahiri, Anuradha Paudwal</div>
+                    </div>
+                    <div class="music-card" data-index="5">
+                        <img src="images/006.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">GHEHRA HUA</div>
+                        <div class="img-description"> Irshad Kamil, Arijit Singh...</div>
+                    </div>
+                    <div class="music-card" data-index="6">
+                        <img src="images/007.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">SAHIBA</div>
+                        <div class="img-description"> Aditya Rikhari</div>
+                    </div>
+                    <div class="music-card" data-index="7">
+                        <img src="images/008.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Raanjhan</div>
+                        <div class="img-description"> Sachet-Parampara, Parampara Tandon</div>
+                    </div>
+                </div>
+            </div>
+            <div class="music-section">
+                <h2>Recents</h2>
+                <div class="songs">
+                    <div class="music-card" data-index="8">
+                        <img src="images/images1/21.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Yugat Mandali</div>
+                        <div class="img-description"> Avadhoot Gandhi, Haridas Shinde</div>
+                    </div>
+                    <div class="music-card" data-index="9">
+                        <img src="images/images1/22.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Deva Shree Ganesha</div>
+                        <div class="img-description"> Ajay-Atul, Ajay Gogavale </div>
+                    </div>
+                    <div class="music-card" data-index="10">
+                        <img src="images/images1/23.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Udhal Ho</div>
+                        <div class="img-description"> Adarsh Shinde</div>
+                    </div>
+                    <div class="music-card" data-index="11">
+                        <img src="images/images1/24.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Sur Niragas Ho</div>
+                        <div class="img-description"> Shankar Mahadevan, Aanandi Joshi</div>
+                    </div>
+                    <div class="music-card" data-index="12">
+                        <img src="images/images1/25.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Namo Namo</div>
+                        <div class="img-description"> Amit Trivedi</div>
+                    </div>
+                    <div class="music-card" data-index="13">
+                        <img src="images/images1/26.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Swami Samarth Tarak Mantra</div>
+                        <div class="img-description"> Mugdha Vaishampayan</div>
+                    </div>
+                    <div class="music-card" data-index="14">
+                        <img src="images/images1/27.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Jaikal Mahakal</div>
+                        <div class="img-description">Amit Trivedi</div>
+                    </div>
+                    <div class="music-card" data-index="15">
+                        <img src="images/images1/28.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Karma Song</div>
+                        <div class="img-description"> Juno, B. Ajaneesh Loknath, Venkatesh D. C.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="music-section">
+                <h2>Popular album and singers</h2>
+                <div class="songs">
+                    <div class="music-card" data-index="16">
+                        <img src="images/images1/11.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Aashique 2</div>
+                        <div class="img-description">  various artist</div>
+                    </div>
+                    <div class="music-card" data-index="17">
+                        <img src="images/images1/12.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Yeh Jawaani Hai Deewani</div>
+                        <div class="img-description"> Pritam, Sreerama Chandra, Shilpa Rao</div>
+                    </div>
+                    <div class="music-card" data-index="18">
+                        <img src="images/images1/13.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Sanam Teri Kasam</div>
+                        <div class="img-description">Sameer Anjaan, Subrat Sinha</div>
+                    </div>
+                    <div class="music-card" data-index="19">
+                        <img src="images/images1/14.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Finding Her</div>
+                        <div class="img-description">Kushagra, Saaheal</div>
+                    </div>
+                    <div class="music-card" data-index="20">
+                        <img src="images/images1/15.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">YOUNG GOAT</div>
+                        <div class="img-description">Young G.O.A.T  by Cheema Y, Gur Sidhu</div>
+                    </div>
+                    <div class="music-card" data-index="21">
+                        <img src="images/images1/16.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Kashmir Main, Tu Kanyakumari</div>
+                        <div class="img-description"> Vishal & Shekhar, Sunidhi Chauhan</div>
+                    </div>
+                    <div class="music-card" data-index="22">
+                        <img src="images/images1/17.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Tere Ishk Mein</div>
+                        <div class="img-description"> A.R. Rahman, Irshad Kamil</div>
+                    </div>
+                    <div class="music-card" data-index="23">
+                        <img src="images/images1/18.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Making Memories Of Us</div>
+                        <div class="img-description"> Keith Urban</div>
+                    </div>
+                </div>
+            </div>
+           <!--<div class="music-section">
+                <h2>Based on your recent listening</h2>
+                <div class="songs">
+                    <div class="music-card" data-index="24">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="25">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="26">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="27">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="28">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="29">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="30">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                    <div class="music-card" data-index="31">
+                        <img src="images/1.jpg" alt="">
+                        <div class="music-play-btn"><i class="fa-solid fa-circle-play"></i></div>
+                        <div class="img-title">Title 1</div>
+                        <div class="img-description">description for our music</div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+    <!--player-->
+    <div class="player-bar">
+        <div class="now-bar">
+            <img src="images/1.jpg" alt="">
+            <div>
+            <div class="img-title-info">title 1</div>
+            <div class="img-des-info">description for our music</div>
+            </div>
+        </div>
+        <div class="music-controller">
+            <div class="player">
+            <div id="shuffle"><i class="fa-solid fa-shuffle"></i></div>
+            <div id="backward"><i class="fa-solid fa-backward-step"></i></div>
+            <div id="plays"><i id="play" class="fa-solid fa-circle-play"></i></div>
+            <div id="forward"><i class="fa-solid fa-forward-step"></i></div>
+            <div id="repeat"><i class="fa-solid fa-repeat"></i></div>
+            </div>
+            <div>
+            <div class="time-bar">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressbar" value="0">
+                <span id="duration">0:00</span>
+            </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+    <script src="jss.js"></script>
+</body>
+
+</html>

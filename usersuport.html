@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Support System</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background: #0d0d0d;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    /* Tab Navigation */
+    .view-toggle {
+        background: #181818;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid #2a2a2a;
+    }
+
+    .view-toggle button {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #1db954;
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .view-toggle button.active {
+        background: #1db954;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        align-items: center;
+    }
+
+    .logo { font-weight: 700; font-size: 22px; color: #fff; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 14px; }
+    .login-btn { background: #1db954; padding: 8px 16px; border-radius: 20px; color: #000; font-weight: 600; }
+
+    /* Hero & Support Area */
+    .hero { text-align: center; padding: 60px 20px; }
+    .hero h1 { font-size: 48px; margin-bottom: 30px; }
+    .search-box {
+        max-width: 600px; margin: auto; background: #181818;
+        border-radius: 30px; padding: 10px; display: flex; align-items: center;
+    }
+    .search-box input {
+        flex: 1; padding: 12px; border: none; outline: none; background: transparent; color: #fff;
+    }
+    .search-box button {
+        background: #1db954; border: none; color: #000; padding: 10px 15px; border-radius: 50%; cursor: pointer;
+    }
+
+    #supportMessage {
+        margin-top: 20px; color: #1db954; font-weight: 600; display: none;
+    }
+
+    /* Admin Dashboard Styles */
+    .admin-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    .issue-card {
+        background: #181818; padding: 20px; border-radius: 8px; margin-bottom: 15px;
+        border-left: 5px solid #1db954; animation: fadeIn 0.4s ease;
+    }
+    .issue-header { display: flex; justify-content: space-between; font-size: 12px; color: #aaa; margin-bottom: 10px; }
+    .status { background: #1db954; color: #000; padding: 2px 8px; border-radius: 10px; font-weight: bold; font-size: 10px; }
+    
+    .clear-btn { background: #ff4444; border: none; padding: 10px 20px; border-radius: 20px; color: #fff; cursor: pointer; margin-bottom: 20px; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Common Section */
+    .section { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    .item { padding: 15px; border-bottom: 1px solid #2a2a2a; cursor: pointer; transition: 0.2s; }
+    .item:hover { background: #1a1a1a; }
+
+    /* Footer */
+    .footer { padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; background: #000; margin-top: 50px; }
+    .footer h4 { margin-bottom: 10px; }
+    .footer p { color: #aaa; font-size: 14px; margin-bottom: 5px; }
+
+</style>
+</head>
+<body>
+
+    <div class="view-toggle">
+        <button id="btnUser" class="active" onclick="showPage('userPage', 'btnUser')">User Support View</button>
+        <button id="btnAdmin" onclick="showPage('adminPage', 'btnAdmin')">Admin Dashboard (Records)</button>
+    </div>
+
+    <div id="userPage" class="page active">
+        <div class="navbar">
+            <div class="logo">Spotify</div>
+            <div class="nav-links">
+                <a href="#">Explore Premium</a>
+                <a href="#">Install App</a>
+                <a href="#" class="login-btn">Log in</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <h1>How can we help?</h1>
+            <div class="search-box">
+                <input type="text" id="userInput" placeholder="Describe your issue here...">
+                <button onclick="submitInquiry()">➜</button>
+            </div>
+            <div id="supportMessage">✔ Inquiry submitted successfully!</div>
+        </div>
+
+        <div class="section">
+            <h2>Popular Topics</h2>
+            <div class="item">Can't reset password</div>
+            <div class="item">Subscription payment failed</div>
+            <div class="item">Offline listening help</div>
+        </div>
+    </div>
+
+    <div id="adminPage" class="page">
+        <div class="admin-container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>User Inquiries Database</h2>
+                <button class="clear-btn" onclick="clearData()">Clear All Logs</button>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #2a2a2a; margin-bottom: 20px;">
+            
+            <div id="logsContainer">
+                </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div><h4>Company</h4><p>About</p><p>Jobs</p></div>
+        <div><h4>Communities</h4><p>For Artists</p><p>Developers</p></div>
+        <div><h4>Useful Links</h4><p>Support</p><p>Web Player</p></div>
+    </div>
+
+    <script>
+        // Switch between Pages
+        function showPage(pageId, btnId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Deactivate all buttons
+            document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+            
+            // Show selected
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById(btnId).classList.add('active');
+
+            if(pageId === 'adminPage') {
+                loadLogs();
+            }
+        }
+
+        // Submit Inquiry (Saves to LocalStorage)
+        function submitInquiry() {
+            const input = document.getElementById('userInput');
+            const msg = document.getElementById('supportMessage');
+
+            if (input.value.trim() === "") {
+                alert("Please type your issue first.");
+                return;
+            }
+
+            // Create data object
+            const inquiry = {
+                id: "REQ-" + Math.floor(1000 + Math.random() * 9000),
+                content: input.value,
+                time: new Date().toLocaleString()
+            };
+
+            // Get existing or start new array
+            let allInquiries = JSON.parse(localStorage.getItem('spotify_logs')) || [];
+            allInquiries.push(inquiry);
+            localStorage.setItem('spotify_logs', JSON.stringify(allInquiries));
+
+            // UI Feedback
+            input.value = "";
+            msg.style.display = "block";
+            setTimeout(() => { msg.style.display = "none"; }, 3000);
+        }
+
+        // Load Logs into Admin View
+        function loadLogs() {
+            const container = document.getElementById('logsContainer');
+            const data = JSON.parse(localStorage.getItem('spotify_logs')) || [];
+
+            if (data.length === 0) {
+                container.innerHTML = "<p style='color:#555; text-align:center;'>No records found.</p>";
+                return;
+            }
+
+            container.innerHTML = data.reverse().map(item => `
+                <div class="issue-card">
+                    <div class="issue-header">
+                        <span>Ticket: ${item.id}</span>
+                        <span>${item.time}</span>
+                    </div>
+                    <div style="font-size: 16px;">${item.content}</div>
+                    <div style="margin-top:10px;"><span class="status">Received</span></div>
+                </div>
+            `).join('');
+        }
+
+        // Clear Data
+        function clearData() {
+            if(confirm("Delete all support records?")) {
+                localStorage.removeItem('spotify_logs');
+                loadLogs();
+            }
+        }
+    </script>
+</body>
+</html>

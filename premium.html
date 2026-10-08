@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Premium Clone</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+nav h2{
+  color:#1DB954;
+}
+
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav ul li{
+  cursor:pointer;
+  transition:0.3s;
+}
+
+nav ul li:hover{
+  color:#1DB954;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 60px;
+  background: linear-gradient(120deg,#1DB954,#121212,#1DB954);
+  background-size:300% 300%;
+  animation: gradientMove 10s infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0%}
+  50%{background-position:100%}
+  100%{background-position:0%}
+}
+
+.hero h1{
+  font-size:60px;
+  max-width:600px;
+}
+
+.hero button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#1DB954;
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  transform:scale(1.1);
+}
+
+/* SECTION */
+.section{
+  padding:100px 40px;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  max-width:600px;
+  margin:auto;
+}
+
+.card{
+  height:150px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:20px;
+  font-size:18px;
+  opacity:0;
+  transform:translateY(50px);
+  transition:0.8s;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+
+.card:nth-child(1){background:#ff4d00;}
+.card:nth-child(2){background:#6a8f00;}
+.card:nth-child(3){background:#6c63ff;}
+.card:nth-child(4){background:#ff2bbf;}
+.card:nth-child(5){background:#0f8a6f;}
+
+/* PRICING */
+.pricing{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.plan{
+  width:250px;
+  padding:20px;
+  border-radius:10px;
+  background:#181818;
+  transition:0.3s;
+}
+
+.plan:hover{
+  transform:translateY(-10px);
+}
+
+.plan h3{
+  margin-bottom:10px;
+}
+
+.plan button{
+  margin-top:15px;
+  padding:10px;
+  width:100%;
+  border:none;
+  border-radius:20px;
+  background:#1DB954;
+  color:#000;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+  color:#aaa;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Spotify</h2>
+  <ul>
+    <li>Premium</li>
+    <li>Support</li>
+    <li>Download</li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>The ultimate home for videos</h1>
+  <button>Get Premium</button>
+</section>
+
+<!-- CARDS -->
+<section class="section">
+  <div class="cards">
+    <div class="card">Watch where you listen with just one tap</div>
+    <div class="card">Your Wrapped at the end of the year</div>
+    <div class="card">Soundtrack your mood with daylist</div>
+    <div class="card">Listen together from anywhere with Jam</div>
+    <div class="card">Discover your taste match with Blend</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="pricing">
+    <div class="plan">
+      <h3>Free</h3>
+      <p>Basic features with ads</p>
+      <button>Get Free</button>
+    </div>
+
+    <div class="plan">
+      <h3>Standard</h3>
+      <p>Ad-free music listening</p>
+      <button>Try Premium</button>
+    </div>
+
+    <div class="plan">
+      <h3>Platinum</h3>
+      <p>Best quality + downloads</p>
+      <button>Get Premium</button>
+    </div>
+
+    <div class="plan">
+      <h3>Student</h3>
+      <p>Discounted plan</p>
+      <button>Try Student</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Spotify Clone UI
+</footer>
+
+<script>
+// SCROLL ANIMATION
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      card.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
